@@ -1,0 +1,36 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "me.cybersteve.uno"
+        minSdkVersion 19
+        targetSdkVersion 30
+        versionCode 20230220
+        versionName "3.5"
+    } // defaultConfig
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        } // release
+    } // buildTypes
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    } // compileOptions
+} // android
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    implementation 'cat.ereza:customactivityoncrash:2.2.0'
+    implementation project(path: ':opencv410')
+} // dependencies
+
+// E.O.F
